@@ -15,6 +15,10 @@
       <span v-if="changePercent > 0">👍</span>
       <span v-else-if="changePercent < 0">👎</span>
       <span v-else="changePercent === 0">🤞</span>
+
+      <span v-show="changePercent > 0">👍</span>
+      <span v-show="changePercent < 0">👎</span>
+      <span v-show="changePercent === 0">🤞</span>
     </h1> 
   </div>
 
