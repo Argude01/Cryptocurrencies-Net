@@ -26,11 +26,15 @@
       -->
     </h1>
 
+    <span v-on:click="toggleShowPrices">Ver Precios</span>
+
+    <!--- NOTE:
+          We can show lists from a array or a collection of data   
     <ul>
       <li v-for="(price, index) in prices" v-bind:key="price">{{ index }} - {{ price }}</li>
     </ul>
-    
-    <ul>
+    --->
+    <ul v-show=showPrices>
       <li v-for="(price, index) in pricesWithDays" v-bind:key="price.day">
         {{ index }} - {{ price.day }} = {{ price.value }}
       </li>
