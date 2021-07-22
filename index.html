@@ -9,8 +9,14 @@
 </head>
 <body>
   <div id="app">
-    <img v-bind:src="img"  v-bind:alt="name">
-    <h1>
+    <img
+      v-on:mouseover="toggleShowPrices"
+      v-on:mouseout="toggleShowPrices" 
+      v-bind:src="img"  
+      v-bind:alt="name"
+      >
+
+    <h1 v-bind:class=" changePercent > 0 ? 'green' : 'red' ">
       {{ name }}
       <span v-if="changePercent > 0">👍</span>
       <span v-else-if="changePercent < 0">👎</span>
@@ -24,9 +30,10 @@
         <span v-show="changePercent < 0">👎</span>
         <span v-show="changePercent === 0">🤞</span>
       -->
+      <span v-on:click="toggleShowPrices">
+        {{ showPrices ? '💸' : '🎃' }}
+      </span>
     </h1>
-
-    <span v-on:click="toggleShowPrices">Ver Precios</span>
 
     <!--- NOTE:
           We can show lists from a array or a collection of data   
@@ -35,8 +42,12 @@
     </ul>
     --->
     <ul v-show=showPrices>
-      <li v-for="(price, index) in pricesWithDays" v-bind:key="price.day">
-        {{ index }} - {{ price.day }} = {{ price.value }}
+      <li 
+        v-for="(bprice, index) in pricesWithDays" v-bind:key="price.day"
+        v-bind:class="{ orange: bprice.value === price, red: bprice.value < price, green: bprice.value > price }"
+        class="uppercase"
+        >
+        {{ index }} - {{ bprice.day }} = {{ bprice.value }}
       </li>
     </ul>
   </div>

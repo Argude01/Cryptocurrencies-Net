@@ -8,6 +8,7 @@ new Vue({
       changePercent: 0,
       //prices: [8400, 9000, 8500, 4500, 5630, 7854, 9540],
       showPrices: false,
+      price: 8400,
       pricesWithDays: [
         { day: 'Lunes', value: 8400 },
         { day: 'Martes', value: 9000 },
