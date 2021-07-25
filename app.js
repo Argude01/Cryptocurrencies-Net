@@ -24,9 +24,10 @@ new Vue({
   // functions
   methods: {
     toggleShowPrices () {
-      this.showPrices = !this.showPrices 
-    }
-  
+      this.showPrices = !this.showPrices
+      
+      this.color = this.color.split('').reverse().join('') // dark mode color = 4f4f4f 
+    }  
   }
 
 
