@@ -28,6 +28,12 @@ new Vue({
       return `${this.name} - ${this.symbol}`
     }
   },
+  // watchers are binded functions to the data properties
+  watch: {
+    showPrices (newVal, oldVal) {
+      console.log('showPrices: ',newVal, oldVal)
+    }
+  },
   // functions
   methods: {
     toggleShowPrices () {
